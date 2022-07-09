@@ -3,8 +3,8 @@ node {
         git branch: "master", url: 'https://github.com/pi4k8s/easzlab-dockerfiles.git'
     }
     stage('docker build & push') {
-        sh "cd ansible && docker build -f Dockerfile-lite . -t pi4k8s/easzlab-ansible:2.10.6-lite"
-        sh "docker push pi4k8s/easzlab-ansible:2.10.6-lite"
+        sh "cd kubasz && docker build . -t pi4k8s/easzlab-kubasz:3.3.1"
+        sh "docker push pi4k8s/easzlab-kubasz:3.3.1"
     }
     stage('cleanWs'){
         cleanWs()

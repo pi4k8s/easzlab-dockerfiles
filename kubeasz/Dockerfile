@@ -3,9 +3,9 @@
 # @author:  gjmzj
 # @repo:     https://github.com/easzlab/kubeasz
 
-FROM easzlab/ansible:2.10.6-lite
+FROM pi4k8s/easzlab-ansible:2.10.6-lite
 
-ENV KUBEASZ_VER=3.3.0
+ENV KUBEASZ_VER=3.3.1
 
 RUN set -x \
       # Downloading kubeasz
