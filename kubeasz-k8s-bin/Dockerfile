@@ -6,10 +6,12 @@
 
 FROM alpine:3.12
 
-ENV K8S_VER=v1.21.4
+ARG K8S_VERSION=v1.21.4
 
-RUN wget https://dl.k8s.io/$K8S_VER/kubernetes-server-linux-amd64.tar.gz && \
-    tar zxf kubernetes-server-linux-amd64.tar.gz && \
+ENV K8S_VER=$K8S_VERSION
+
+RUN wget https://dl.k8s.io/$K8S_VER/kubernetes-server-linux-arm64.tar.gz && \
+    tar zxf kubernetes-server-linux-arm64.tar.gz && \
     mkdir -p /k8s && cd kubernetes/server/bin && \
     mv kube-apiserver kube-controller-manager kube-scheduler /k8s && \
     mv kubelet kube-proxy kubectl /k8s && \
